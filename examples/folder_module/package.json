@@ -1,0 +1,8 @@
+{
+  "name": "folder_module",
+  "version": "0.0.0",
+  "description": "this is an example of a folder base module.",
+  "main": "index.js",
+  "author": "Michaelangelo Jong",
+  "license": "BSD-2-Clause"
+}
