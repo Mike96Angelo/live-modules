@@ -9,7 +9,7 @@ Why Live Modules?
 
 To install Live Modules:
 
-    npm install live_modules
+    npm install live-modules
 
 Documentation:
 
