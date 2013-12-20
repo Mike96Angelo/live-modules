@@ -26,21 +26,33 @@ Documentation:
         holds: global variable to assign module to
 
     callback:
-        gives: err, vrr, mod as args
+        gives: err, vrr, mod, status as args
             err: error  [Error]
             vrr: name of global variable  string
             mod: module name or filename  string
+            status: the status of modules loading  string  {loaded|updated|update_failed}
 
-Example:
+Example module:
+
+    module.exports = {
+      name: 'myModule',
+      func: function () {
+        /* does stuff */
+      }
+    };
+
+Example app:
 
     var lm = require('live-modules').createLiveModules(require);
 
-    lm.require('myModule','myVar', function (err, vrr, mod) {
+    lm.require('myModule','myVar', function (err, vrr, mod, status) {
+        console.log(status);
         if (err) {
             console.log(err);
         } else {
             /* do stuff with module */
             console.log(myVar.name); // or console.log(global[vrr].name);
+            myVar.func(); // or global[vrr].func();
         }
     });
 
