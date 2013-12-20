@@ -10,14 +10,14 @@ module.exports = {
             delete requires.cache[requires.resolve(mod)];
             try {
               global[vrr] = requires(mod);
-              typeof callback === 'function' ? callback('', vrr, mod) : null;
+              typeof callback === 'function' ? callback('', vrr, mod, 'updated') : null;
             } catch (err) {
-              typeof callback === 'function' ? callback(err, vrr, mod) : null;
+              typeof callback === 'function' ? callback(err, vrr, mod, 'update_failed') : null;
             }
           });
         });
         global[vrr] = requires(mod);
-        typeof callback === 'function' ? callback('', vrr, mod) : null;
+        typeof callback === 'function' ? callback('', vrr, mod, 'loaded') : null;
       }
     }
   },
