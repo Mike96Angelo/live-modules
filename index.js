@@ -5,7 +5,7 @@ module.exports = {
       gaze = require('gaze');
     this.require = function (mod, vrr, callback) {
       if (typeof mod === 'string' && typeof vrr  === 'string') {
-        gaze(['js','json','node'].indexOf(mod.split('.').pop()) !== -1 ? mod : mod + '/*', function () {
+        gaze(['js','json','node'].indexOf(mod.split('.').pop()) !== -1 ? requires.resolve(mod) : requires.resolve(mod) + '/*', function () {
           this.on('all', function() {
             delete requires.cache[requires.resolve(mod)];
             try {
