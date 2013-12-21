@@ -1,6 +1,6 @@
 {
   "name": "live-modules",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Allows modules to be edited while in use, modules will be reloaded into running application if edited.",
   "main": "index.js",
   "keywords": [
